@@ -1,0 +1,14 @@
+{
+  "name": "bannergenerator",
+  "version": "1.0.0",
+  "description": "Takes portrait images and creates a landscape banner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Barreto",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^0.2.28"
+  }
+}
