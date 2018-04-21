@@ -9,4 +9,11 @@ let output = {
   blur: 50
 };
 
-image.processAll(output);
+image.processAll(output).then(result => {
+  console.log(result);
+}, err => {
+
+  if (err.code === 'ENOENT')
+    console.log('ERROR:', err.errno, 'no such file or directory (', err.path,')')
+
+});
