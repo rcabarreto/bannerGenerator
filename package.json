@@ -9,6 +9,7 @@
   "author": "Rodrigo Barreto",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.15.1",
     "jimp": "^0.2.28"
   }
 }
