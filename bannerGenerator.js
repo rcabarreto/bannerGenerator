@@ -16,7 +16,7 @@ options
   .option('-h, --height [height]', 'height of output image', number, 1280)
   .option('-q, --quality [quality]', 'quality of output image', number, 80)
   .option('-b, --blur [blur]', 'blur of bg bars [50]', number, 50)
-  .option('-f, --folder [folder]', 'Path of the source folder', '/images/src/')
+  .option('-f, --folder [folder]', 'Path of the source folder', 'images/src/')
   .parse(process.argv);
 
 
