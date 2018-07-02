@@ -4,7 +4,7 @@
 
 const options = require('commander');
 
-const image = require('./lib/imageManipulator');
+const im = require('./lib/imageManipulator');
 
 function number(number){
   return parseInt(number);
@@ -20,11 +20,21 @@ options
   .parse(process.argv);
 
 
-image.processAll(options).then(result => {
-  console.log(result);
-}, err => {
 
+im.findImages(options).then(fileList => {
+  fileList.map((file => {
+    console.log('Filename:', file);
+    im.process(file, options);
+  }));
+  // console.log(fileList);
+}, err => {
   if (err.code === 'ENOENT')
     console.log('ERROR:', err.errno, 'no such file or directory (', err.path,')')
-
 });
+
+// im.processAll(options).then(result => {
+//   console.log(result);
+// }, err => {
+//   if (err.code === 'ENOENT')
+//     console.log('ERROR:', err.errno, 'no such file or directory (', err.path,')')
+// });
