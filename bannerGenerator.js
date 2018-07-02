@@ -24,7 +24,7 @@ options
 im.findImages(options).then(fileList => {
   fileList.map((file => {
     console.log('Filename:', file);
-    im.process(file, options);
+    im.process(file, options).then(banner => console.log('Success!')).catch(err => console.log('There was an error!'));
   }));
   // console.log(fileList);
 }, err => {
