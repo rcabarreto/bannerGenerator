@@ -21,16 +21,17 @@ options
 
 
 
-im.findImages(options).then(fileList => {
-  fileList.map((file => {
-    console.log('Filename:', file);
-    im.process(file, options).then(banner => console.log('Success!')).catch(err => console.log('There was an error!'));
-  }));
-  // console.log(fileList);
-}, err => {
-  if (err.code === 'ENOENT')
-    console.log('ERROR:', err.errno, 'no such file or directory (', err.path,')')
-});
+im.findImages(options)
+  .then(fileList => {
+    fileList.map((file => {
+      console.log('Filename:', file);
+      im.process(file, options).then(banner => console.log('Success!')).catch(err => console.log('There was an error!'));
+    }));
+    // console.log(fileList);
+  }, err => {
+    if (err.code === 'ENOENT')
+      console.log('ERROR:', err.errno, 'no such file or directory (', err.path,')')
+  });
 
 // im.processAll(options).then(result => {
 //   console.log(result);
